@@ -1,6 +1,7 @@
-package cn.edu.nj.multithreading;
+package cn.edu.nj;
 
-import cn.edu.nj.crazy.Stall;
+
+import cn.edu.nj.routine.Stall;
 
 /**
  * Created by apple on 17/3/23.

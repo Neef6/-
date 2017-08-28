@@ -1,4 +1,4 @@
-package cn.edu.nj.crazy;
+package cn.edu.nj.routine;
 
 /**
  * Created by apple on 17/3/22.

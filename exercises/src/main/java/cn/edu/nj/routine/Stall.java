@@ -1,9 +1,9 @@
-package cn.edu.nj.crazy;
+package cn.edu.nj.routine;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.RunnableFuture;
+
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -40,7 +40,7 @@ public class Stall {
 
       }
       // has empty parking space
-      List freeSpaceList = getfreeSpaceList();
+      List<Integer> freeSpaceList = getfreeSpaceList();
       Random random = new Random();
       int tempIndex = random.nextInt(freeSpaceList.size());
       int index = (int) freeSpaceList.get(tempIndex);
@@ -67,7 +67,7 @@ public class Stall {
         System.out.println("parkingOut:");
         full.await();
       }
-      List parkedSpaceList = getParkedSpace();//
+      List<Integer> parkedSpaceList = getParkedSpace();//
       Random random = new Random();
       int tempIndex = random.nextInt(parkedSpaceList.size());
       int index = (int) parkedSpaceList.get(tempIndex);
@@ -93,8 +93,8 @@ public class Stall {
   }
 
 
-  private List getfreeSpaceList() {
-    List list = new ArrayList();
+  private List<Integer> getfreeSpaceList() {
+    List<Integer> list = new ArrayList();
     for (int i = 0; i < stallParkSpace.length; i++) {
       if (stallParkSpace[i]) {
         list.add(i);//the empty park space
@@ -103,8 +103,8 @@ public class Stall {
     return list;
   }
 
-  private List getParkedSpace() {
-    List list = new ArrayList();
+  private List<Integer> getParkedSpace() {
+    List<Integer> list = new ArrayList<Integer>();
     for (int i = 0; i < stallParkSpace.length; i++) {
       if (!stallParkSpace[i]) {
         list.add(i);
